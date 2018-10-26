@@ -46,7 +46,7 @@ robot.on("ready", () => {
   
 
  robot.on("guildMemberAdd", async member => {
-    console.log(`${member.id} joined the server.`);
+    
 
     let welcomechannel = member.guild.channels.find(`name`, "welcome_leaves");
     
