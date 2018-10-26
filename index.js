@@ -21,6 +21,24 @@ robot.on("ready", () => {
     let messageArray = message.contest.split(" ");
     let cmd = messageArray[0]
     let args = messageArray.slice(1);
+      
+      if(cmd === `${prefix}verify){
+      if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry pal, you can't do that.");
+    let pMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+    if(!pMember) return message.reply("Couldn't find rhat user, yo.");
+    
+    let gRole = message.guild.roles.find(`name`, "verify")
+    if(!gRole) return message.reply("Couldn't find that role.");;
+
+    if(pMember.roles.has(gRole.id))("They have already role!");
+    await(pMember.addRole(gRole.id));
+
+    try{
+    await    pMember.send(`You verify account`);
+    }catch(e){
+    message.channel.send(`Congrats to <@${pMember.id}> you verify account.`);
+}
+    }
   });
   
 
