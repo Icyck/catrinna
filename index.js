@@ -27,7 +27,7 @@ robot.on("ready", () => {
     let pMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if(!pMember) return message.reply("Couldn't find rhat user, yo.");
     
-    let gRole = message.guild.roles.find(`name`, "verify")
+    let gRole = message.guild.roles.find(`name`: "verify")
     if(!gRole) return message.reply("Couldn't find that role.");;
 
     if(pMember.roles.has(gRole.id))("They have already role!");
